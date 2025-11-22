@@ -1,2 +1,2 @@
 # PixelStorage
-PixelStorage proyect for University.
+PixelStorage project for University.
