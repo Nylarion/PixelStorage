@@ -19,14 +19,13 @@ namespace ProyectoFinalProgramacion2
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        public static class UsuarioActual
         {
-
+            public static string NombreUsuario { get; set; }
         }
 
         private void btnIniciarSesion_Click_1(object sender, EventArgs e)
         {
-
             // ===============================================
             // PASO 1: VALIDAR QUE LOS CAMPOS NO ESTÉN VACÍOS
             // ===============================================
@@ -111,9 +110,11 @@ namespace ProyectoFinalProgramacion2
                 // Si count es mayor que 0, significa que encontró el usuario
                 if (count > 0)
                 {
+
                     // Login exitoso - Usuario y contraseña correctos
                     MessageBox.Show("Sesión iniciada correctamente.", "Bienvenido a PixelStorage",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UsuarioActual.NombreUsuario = txtUsuario.Text; // Pasar el nombre de usuario a la instancia de Inicio
                     Inicio inicio = new Inicio();
                     inicio.Show();
                     this.Hide();
@@ -172,6 +173,11 @@ namespace ProyectoFinalProgramacion2
                     conexion.Close();
                 }
             }
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

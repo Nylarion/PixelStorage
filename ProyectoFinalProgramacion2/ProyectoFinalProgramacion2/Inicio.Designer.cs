@@ -40,6 +40,7 @@
             panel3 = new Panel();
             lblPixelStorage = new Label();
             panel4 = new Panel();
+            lblNombreUsuario = new Label();
             lblCategorias = new Label();
             PanelInformacion = new Panel();
             panel1.SuspendLayout();
@@ -220,6 +221,7 @@
             // panel4
             // 
             panel4.BackColor = SystemColors.Highlight;
+            panel4.Controls.Add(lblNombreUsuario);
             panel4.Controls.Add(lblCategorias);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(250, 0);
@@ -227,6 +229,17 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(881, 109);
             panel4.TabIndex = 1;
+            // 
+            // lblNombreUsuario
+            // 
+            lblNombreUsuario.AutoSize = true;
+            lblNombreUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblNombreUsuario.ForeColor = SystemColors.ControlLightLight;
+            lblNombreUsuario.Location = new Point(693, 67);
+            lblNombreUsuario.Name = "lblNombreUsuario";
+            lblNombreUsuario.Size = new Size(155, 25);
+            lblNombreUsuario.TabIndex = 2;
+            lblNombreUsuario.Text = "nombre usuario";
             // 
             // lblCategorias
             // 
@@ -262,6 +275,7 @@
             MinimizeBox = false;
             Name = "Inicio";
             Text = "PixelStorage";
+            FormClosed += Inicio_FormClosed_1;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -286,5 +300,6 @@
         private Label lblCategorias;
         private Button btnBorrarProductos;
         private Button btnInicio;
+        private Label lblNombreUsuario;
     }
 }

@@ -62,6 +62,12 @@ namespace ProyectoFinalProgramacion2
                 return;  // Salir del método si el sueldo no es válido
             }
 
+            if (int.TryParse(txtPrecioIngresar.Text, out precio) && precio < 5000)
+            {
+                MessageBox.Show("El precio no puede ser menor a 5000.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;  // Salir del método si el sueldo no es válido
+            }
+
             // ===============================================
             // PASO 3: CREAR LOS PARÁMETROS PARA EL STORED PROCEDURE
             // ===============================================

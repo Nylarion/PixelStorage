@@ -8,11 +8,14 @@ namespace ProyectoFinalProgramacion2
         {
             InitializeComponent();
             AbrirPanel(new Bienvenida());
+            CargarUser();
         }
+
+        public string usuarioActual;
 
         private void CargarUser()
         {
-
+            lblNombreUsuario.Text = "Usuario: " + Login.UsuarioActual.NombreUsuario;
         }
 
         Button botonSeleccionado = null;
@@ -105,6 +108,12 @@ namespace ProyectoFinalProgramacion2
 
             AbrirPanel(new Bienvenida());
             lblCategorias.Text = "Bienvenido";
+            lblNombreUsuario.Text = "Usuario: " + Login.UsuarioActual.NombreUsuario;
+        }
+
+        private void Inicio_FormClosed_1(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -45,9 +45,9 @@ namespace ProyectoFinalProgramacion2
 
             // CurrentRow representa la fila que el usuario tiene seleccionada
             // Si es null, significa que no hay ninguna fila seleccionada
-            if (dgvBorrarProducto.CurrentRow == null)
+            if (dgvBorrarProducto.CurrentRow == null || dgvBorrarProducto.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Seleccione un producto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seleccione un producto para borrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;  // Salir del método si no hay selección
             }
 
@@ -104,6 +104,14 @@ namespace ProyectoFinalProgramacion2
         private void btnLimpiarFiltro_Click(object sender, EventArgs e)
         {
             txtFiltroBuscar.Clear();
+            txtIDProtuctoBorrar.Clear();
+            txtMarcaProducto.Clear();
+            txtModeloProducto.Clear();
+            txtCategoriaProducto.Clear();
+            txtPrecioProducto.Clear();
+
+            DataTable empleadosFiltrados = Conexion.EjecutarConsulta("SP_SELECCIONAR_PRODUCTO", null);
+            dgvBorrarProducto.DataSource = empleadosFiltrados;
         }
 
         private void dgvBorrarProducto_CellClick(object sender, DataGridViewCellEventArgs e)

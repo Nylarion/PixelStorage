@@ -60,7 +60,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(432, 71);
+            pictureBox1.Location = new Point(432, 86);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(46, 47);
             pictureBox1.TabIndex = 4;
@@ -140,6 +140,7 @@
             MinimizeBox = false;
             Name = "Login";
             Text = "Login";
+            FormClosed += Login_FormClosed;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);

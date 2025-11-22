@@ -45,6 +45,7 @@
             txtIDProducto = new TextBox();
             label4 = new Label();
             btnBuscarProducto = new Button();
+            btnLimpiarFiltro = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEditarProducto).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -88,7 +89,7 @@
             btnEditarProducto.FlatAppearance.BorderSize = 0;
             btnEditarProducto.FlatStyle = FlatStyle.Flat;
             btnEditarProducto.ForeColor = SystemColors.ControlLightLight;
-            btnEditarProducto.Location = new Point(733, 481);
+            btnEditarProducto.Location = new Point(733, 422);
             btnEditarProducto.Margin = new Padding(3, 4, 3, 4);
             btnEditarProducto.Name = "btnEditarProducto";
             btnEditarProducto.Size = new Size(112, 51);
@@ -229,7 +230,7 @@
             btnBuscarProducto.FlatAppearance.BorderSize = 0;
             btnBuscarProducto.FlatStyle = FlatStyle.Flat;
             btnBuscarProducto.ForeColor = SystemColors.ControlLightLight;
-            btnBuscarProducto.Location = new Point(733, 412);
+            btnBuscarProducto.Location = new Point(733, 363);
             btnBuscarProducto.Margin = new Padding(3, 4, 3, 4);
             btnBuscarProducto.Name = "btnBuscarProducto";
             btnBuscarProducto.Size = new Size(112, 51);
@@ -238,12 +239,28 @@
             btnBuscarProducto.UseVisualStyleBackColor = false;
             btnBuscarProducto.Click += btnBuscarProducto_Click;
             // 
+            // btnLimpiarFiltro
+            // 
+            btnLimpiarFiltro.BackColor = Color.DodgerBlue;
+            btnLimpiarFiltro.FlatAppearance.BorderSize = 0;
+            btnLimpiarFiltro.FlatStyle = FlatStyle.Flat;
+            btnLimpiarFiltro.ForeColor = SystemColors.ControlLightLight;
+            btnLimpiarFiltro.Location = new Point(733, 481);
+            btnLimpiarFiltro.Margin = new Padding(3, 4, 3, 4);
+            btnLimpiarFiltro.Name = "btnLimpiarFiltro";
+            btnLimpiarFiltro.Size = new Size(112, 51);
+            btnLimpiarFiltro.TabIndex = 19;
+            btnLimpiarFiltro.Text = "Limpiar";
+            btnLimpiarFiltro.UseVisualStyleBackColor = false;
+            btnLimpiarFiltro.Click += btnLimpiarFiltro_Click;
+            // 
             // EditarProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(914, 600);
+            Controls.Add(btnLimpiarFiltro);
             Controls.Add(btnBuscarProducto);
             Controls.Add(panel2);
             Controls.Add(btnEditarProducto);
@@ -278,5 +295,6 @@
         private Label label6;
         private Label label5;
         private Button btnBuscarProducto;
+        private Button btnLimpiarFiltro;
     }
 }

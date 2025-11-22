@@ -56,6 +56,8 @@ namespace ProyectoFinalProgramacion2
         private void btnLimpiarFiltro_Click(object sender, EventArgs e)
         {
             txtFiltroBuscar.Clear();
+            DataTable empleadosFiltrados = Conexion.EjecutarConsulta("SP_SELECCIONAR_PRODUCTO", null);
+            dgvBuscarProducto.DataSource = empleadosFiltrados;
         }
     }
 }

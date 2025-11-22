@@ -101,7 +101,19 @@ namespace ProyectoFinalProgramacion2
 
         private void btnLimpiarFiltroCampo_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnLimpiarFiltro_Click(object sender, EventArgs e)
+        {
             txtFiltroBuscar.Clear();
+            txtIDProducto.Clear();
+            txtMarcaProducto.Clear();
+            txtModeloProducto.Clear();
+            txtCategoriaProducto.Clear();
+            txtPrecioProducto.Clear();
+            DataTable empleadosFiltrados = Conexion.EjecutarConsulta("SP_SELECCIONAR_PRODUCTO", null);
+            dgvEditarProducto.DataSource = empleadosFiltrados;
         }
     }
 }
